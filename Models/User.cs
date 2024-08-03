@@ -14,7 +14,26 @@ namespace PruebaC_sharp_MarianaPerezSerna.Models
         protected string IdentificationNumber { get; set; }
         protected DateOnly BirthDate { get; set; }
         protected string PhoneNumber { get; set; }
+        protected string Email { get; set; }
         protected string Address { get; set; }
+
+        public string GetName() => Name;
+        public string GetLastName() => LastName;
+        public string GetTypeDocument() => TypeDocument;
+        public string GetIdentificationNumber() => IdentificationNumber;
+        public DateOnly GetBirthDate() => BirthDate;
+        public string GetPhoneNumber() => PhoneNumber;
+        public string GetEmail() => Email;
+        public string GetAddress() => Address;
+
+        public string SetName(string name) => Name = name;
+        public string SetLastName(string lastName) => LastName = lastName;
+        public string SetTypeDocument(string typeDocument) => TypeDocument = typeDocument;
+        public string SetIdentificationNumber(string identificationNumber) => IdentificationNumber = identificationNumber;
+        public DateOnly SetBirthDate(DateOnly birthDate) => BirthDate = birthDate;
+        public string SetPhoneNumber(string phoneNumber) => PhoneNumber = phoneNumber;
+        public string SetEmail(string email) => Email = email;
+        public string SetAddress(string address) => Address = address;
 
         public User(string name, string lastName, string typeDocument, string identificationNumber, DateOnly birthDate, string phoneNumber, string address)
         {
@@ -29,13 +48,13 @@ namespace PruebaC_sharp_MarianaPerezSerna.Models
 
         protected void ShowDetails()
         {
-            Console.WriteLine($"Name: {Name}");
-            Console.WriteLine($"LastName: {LastName}");
-            Console.WriteLine($"TypeDocument: {TypeDocument}");
-            Console.WriteLine($"IdentificationNumber: {IdentificationNumber}");
-            Console.WriteLine($"BirthDate: {BirthDate}");
-            Console.WriteLine($"PhoneNumber: {PhoneNumber}");
-            Console.WriteLine($"Address: {Address}");
+            Console.WriteLine($"Nombre: {GetName()}");
+            Console.WriteLine($"Apellido: {GetLastName()}");
+            Console.WriteLine($"Tipo de documento: {GetTypeDocument()}");
+            Console.WriteLine($"Numero de identificación: {GetIdentificationNumber()}");
+            Console.WriteLine($"Fecha de nacimiento (aaaa/mm/dd): {GetBirthDate()}");
+            Console.WriteLine($"Número de teléfono: {GetPhoneNumber()}");
+            Console.WriteLine($"Dirección: {GetAddress()}");
         }
 
         protected int CalculateAge()
